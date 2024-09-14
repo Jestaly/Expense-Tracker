@@ -5,15 +5,34 @@ import java.util.*;
 public class ExpenseTracker {
 
     Scanner scanner = new Scanner(System.in);
-    String month;
+
+    @SuppressWarnings("unused")
+    private int year;
+    @SuppressWarnings("unused")
+    private int month;
+    @SuppressWarnings("unused")
+    private int day;
+    @SuppressWarnings("unused")
+    private String description;
+    @SuppressWarnings("unused")
+    private double amount;
 
     public ExpenseTracker() {
     }
 
     public void addExpense() {
         System.out.println("adding expense.");
+        System.out.print("Year: ");
+        year = scanner.nextInt();
         System.out.print("Month: ");
-        month = scanner.nextLine();
+        month = scanner.nextInt();
+        System.out.print("Day: ");
+        day = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Description: ");
+        description = scanner.nextLine();
+        System.out.print("Amount: ");
+        amount = scanner.nextDouble();
     }
 
     public void deleteExpense() {

@@ -3,12 +3,14 @@ package App;
 import java.util.*;
 import App.CommonConstant;
 
+@SuppressWarnings("unused")
 public class App {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         ExpenseTracker expenseTracker = new ExpenseTracker();
 
         boolean loop = true;
+
         System.out.println("---ACTIONS AVAILABLE---");
         System.out.println("Add Expense (A)");
         System.out.println("Delete Expense (D)");
