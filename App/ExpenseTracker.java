@@ -11,7 +11,8 @@ public class ExpenseTracker {
     }
 
     public void addExpense() {
-        System.out.println("Month: ");
+        System.out.println("adding expense.");
+        System.out.print("Month: ");
         month = scanner.nextLine();
     }
 

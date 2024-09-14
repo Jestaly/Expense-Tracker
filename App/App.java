@@ -1,19 +1,43 @@
 package App;
 
 import java.util.*;
+import App.CommonConstant;
 
 public class App {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         ExpenseTracker expenseTracker = new ExpenseTracker();
 
+        boolean loop = true;
         System.out.println("---ACTIONS AVAILABLE---");
         System.out.println("Add Expense (A)");
         System.out.println("Delete Expense (D)");
         System.out.println("View Expense List (L)");
         System.out.println("View Total Expense (T)");
         System.out.println("View Month's Expense (M)");
-        String choice = scanner.nextLine();
+
+        while (loop == true) {
+            System.out.print("Action: ");
+            String choice = scanner.nextLine();
+            if (choice.toUpperCase().equals(CommonConstant.CHOICE[0])) {
+                loop = false;
+                expenseTracker.addExpense();
+            } else if (choice.toUpperCase().equals(CommonConstant.CHOICE[1])) {
+                loop = false;
+                expenseTracker.deleteExpense();
+            } else if (choice.toUpperCase().equals(CommonConstant.CHOICE[2])) {
+                loop = false;
+                expenseTracker.viewExpenseList();
+            } else if (choice.toUpperCase().equals(CommonConstant.CHOICE[3])) {
+                loop = false;
+                expenseTracker.viewTotalExpense();
+            } else if (choice.toUpperCase().equals(CommonConstant.CHOICE[4])) {
+                loop = false;
+                expenseTracker.viewMonthExpense();
+            } else {
+                continue;
+            }
+        }
 
         scanner.close();
         // REQUIREMENTS
