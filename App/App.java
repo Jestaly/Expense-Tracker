@@ -10,34 +10,30 @@ public class App {
         ExpenseTracker expenseTracker = new ExpenseTracker();
 
         boolean loop = true;
+        while (loop) {
+            System.out.println("---ACTIONS AVAILABLE---");
+            System.out.println("[A] Add Expense");
+            System.out.println("[D] Delete Expense");
+            System.out.println("[L] View Expense List");
+            System.out.println("[T] View Total Expense");
+            System.out.println("[M] View Month's Expense");
+            System.out.println("[C] Close");
 
-        System.out.println("---ACTIONS AVAILABLE---");
-        System.out.println("Add Expense (A)");
-        System.out.println("Delete Expense (D)");
-        System.out.println("View Expense List (L)");
-        System.out.println("View Total Expense (T)");
-        System.out.println("View Month's Expense (M)");
-
-        while (loop == true) {
             System.out.print("Action: ");
             String choice = scanner.nextLine();
-            if (choice.toUpperCase().equals(CommonConstant.CHOICE[0])) {
-                loop = false;
+            choice.toUpperCase();
+            if (choice.equals(CommonConstant.CHOICE[0])) {
                 expenseTracker.addExpense();
-            } else if (choice.toUpperCase().equals(CommonConstant.CHOICE[1])) {
-                loop = false;
+            } else if (choice.equals(CommonConstant.CHOICE[1])) {
                 expenseTracker.deleteExpense();
-            } else if (choice.toUpperCase().equals(CommonConstant.CHOICE[2])) {
-                loop = false;
+            } else if (choice.equals(CommonConstant.CHOICE[2])) {
                 expenseTracker.viewExpenseList();
-            } else if (choice.toUpperCase().equals(CommonConstant.CHOICE[3])) {
-                loop = false;
+            } else if (choice.equals(CommonConstant.CHOICE[3])) {
                 expenseTracker.viewTotalExpense();
-            } else if (choice.toUpperCase().equals(CommonConstant.CHOICE[4])) {
-                loop = false;
+            } else if (choice.equals(CommonConstant.CHOICE[4])) {
                 expenseTracker.viewMonthExpense();
-            } else {
-                continue;
+            } else if (choice.equals(CommonConstant.CHOICE[5])) {
+                break;
             }
         }
 
