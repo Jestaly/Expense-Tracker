@@ -7,33 +7,46 @@ public class ExpenseTracker {
     Scanner scanner = new Scanner(System.in);
 
     // HARD CODED YUNG 10, TO BE CHANGED SOON
-    private int[] year = new int[10];
-    private int[] month = new int[10];
-    private int[] day = new int[10];
-    private String[] description = new String[10];
-    private double[] amount = new double[10];
+    private int[] year = {};
+    private int[] month = {};
+    private int[] day = {};
+    private String[] description = {};
+    private double[] amount = {};
+    private int counter = 0;
 
     public ExpenseTracker() {
     }
 
     public void addExpense() {
-        System.out.println("Adding Expense.");
-        int counter = 0;
-        String choice_2 = "";
-        for (int i = counter; i < 10; i++) {
 
+        System.out.println("Adding Expense.");
+        String choice_2 = "";
+        for (int i = counter; i < counter + 1; i++) {
+
+            counter++;
+            year = new int[counter];
+            month = new int[counter];
+            day = new int[counter];
+            description = new String[counter];
+            amount = new double[counter];
+
+            System.out.println("Expense " + (counter) + ":");
             System.out.print("Year: ");
-            year[i] = scanner.nextInt();
+            year[counter - 1] = scanner.nextInt();
             System.out.print("Month: ");
-            month[i] = scanner.nextInt();
+            month[counter - 1] = scanner.nextInt();
             System.out.print("Day: ");
-            day[i] = scanner.nextInt();
+            day[counter - 1] = scanner.nextInt();
             scanner.nextLine();
             System.out.print("Description: ");
-            description[i] = scanner.nextLine();
+            description[counter - 1] = scanner.nextLine();
             System.out.print("Amount: ");
-            amount[i] = scanner.nextDouble();
+            amount[counter - 1] = scanner.nextDouble();
+            scanner.nextLine();
+
             System.out.println("Would you like to add another Expense? [Y/N]: ");
+            choice_2 = scanner.nextLine();
+
             if (choice_2.equals("Y")) {
                 System.out.println("Adding another Expense.");
                 continue;
@@ -41,7 +54,6 @@ public class ExpenseTracker {
                 System.out.println("Going back to Main Menu.");
                 break;
             }
-            counter++;
         }
 
     }
@@ -53,7 +65,10 @@ public class ExpenseTracker {
     public void viewExpenseList() {
         System.out.println("viewing expense list.");
         System.out.println();
-        System.out.println(year + " " + month + " " + day + " " + description + " " + amount);
+        for (int i = 0; i < counter; i++) {
+            System.out.println(year[i] + " " + month[i] + " " + day[i] + " " + description[i] + " " + amount[i]);
+        }
+
     }
 
     public void viewTotalExpense() {
