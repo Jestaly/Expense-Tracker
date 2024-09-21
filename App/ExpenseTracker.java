@@ -17,6 +17,7 @@ public class ExpenseTracker {
     public ExpenseTracker() {
     }
 
+    // ADD EXPENSE FUNCTION
     public void addExpense() {
 
         System.out.println("Adding Expense.");
@@ -58,10 +59,12 @@ public class ExpenseTracker {
 
     }
 
+    // DELETE EXPENSE FUNCTION
     public void deleteExpense() {
         System.out.println("deleting expense.");
     }
 
+    // VIEW LIST OF EXPENSE FUNCTION
     public void viewExpenseList() {
         System.out.println("viewing expense list.");
         System.out.println();
@@ -71,10 +74,12 @@ public class ExpenseTracker {
 
     }
 
+    // VIEW TOTAL EXPENSES FUNCTION
     public void viewTotalExpense() {
         System.out.println("viewing total expense.");
     }
 
+    // VIEW SPECIFIC MONTH EXPENSES FUNCTION
     public void viewMonthExpense() {
         System.out.println("viewing month expense.");
     }
