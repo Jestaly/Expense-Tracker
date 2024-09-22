@@ -7,12 +7,12 @@ public class ExpenseTracker {
     Scanner scanner = new Scanner(System.in);
 
     // HARD CODED YUNG 10, TO BE CHANGED SOON
-    private int[] year = {};
-    private int[] month = {};
-    private int[] day = {};
-    private String[] description = {};
-    private double[] amount = {};
-    private int counter = 0;
+    private int counter = 1;
+    private int[] year;
+    private int[] month;
+    private int[] day;
+    private String[] description;
+    private double[] amount;
 
     public ExpenseTracker() {
     }
@@ -21,16 +21,14 @@ public class ExpenseTracker {
     public void addExpense() {
 
         System.out.println("Adding Expense.");
-        String choice_2 = "";
-        for (int i = counter; i < counter + 1; i++) {
+        // String choice_2 = "";
 
-            counter++;
-            year = new int[counter];
-            month = new int[counter];
-            day = new int[counter];
-            description = new String[counter];
-            amount = new double[counter];
-
+        // year = new int[counter];
+        // month = new int[counter];
+        // day = new int[counter];
+        // description = new String[counter];
+        // amount = new double[counter];
+        for (int i = 0; i < counter; i++) {
             System.out.println("Expense " + (counter) + ":");
             System.out.print("Year: ");
             year[counter - 1] = scanner.nextInt();
@@ -43,19 +41,22 @@ public class ExpenseTracker {
             description[counter - 1] = scanner.nextLine();
             System.out.print("Amount: ");
             amount[counter - 1] = scanner.nextDouble();
-            scanner.nextLine();
-
-            System.out.println("Would you like to add another Expense? [Y/N]: ");
-            choice_2 = scanner.nextLine();
-
-            if (choice_2.equals("Y")) {
-                System.out.println("Adding another Expense.");
-                continue;
-            } else if (choice_2.equals("N")) {
-                System.out.println("Going back to Main Menu.");
-                break;
-            }
+            counter++;
         }
+
+        System.out.println(year[0] + " " + month[0] + " " + day[0] + " " + description[0] + " " + amount[0]);
+
+        // System.out.println("Would you like to add another Expense? [Y/N]: ");
+        // choice_2 = scanner.nextLine();
+
+        // if (choice_2.equals("Y")) {
+        // System.out.println("Adding another Expense.");
+        // addExpense();
+        // } else if (choice_2.equals("N")) {
+        // System.out.println(year[0] + " " + month[0] + " " + day[0] + " " +
+        // description[0] + " " + amount[0]);
+        // System.out.println("Going back to Main Menu.");
+        // }
 
     }
 
