@@ -7,40 +7,34 @@ public class ExpenseTracker {
     Scanner scanner = new Scanner(System.in);
 
     // HARD CODED YUNG 10, TO BE CHANGED SOON
-    private int counter = 1;
+    private int counter = 0;
     private int[] year;
     private int[] month;
     private int[] day;
     private String[] description;
     private double[] amount;
+    private int size = 0;
 
     public ExpenseTracker() {
     }
 
     // ADD EXPENSE FUNCTION
     public void addExpense() {
-
         System.out.println("Adding Expense.");
-        // String choice_2 = "";
-
-        // year = new int[counter];
-        // month = new int[counter];
-        // day = new int[counter];
-        // description = new String[counter];
-        // amount = new double[counter];
-        for (int i = 0; i < counter; i++) {
+        size++;
+        for (int i = counter; i < size; i++) {
             System.out.println("Expense " + (counter) + ":");
             System.out.print("Year: ");
-            year[counter - 1] = scanner.nextInt();
+            year[i] = scanner.nextInt();
             System.out.print("Month: ");
-            month[counter - 1] = scanner.nextInt();
+            month[i] = scanner.nextInt();
             System.out.print("Day: ");
-            day[counter - 1] = scanner.nextInt();
+            day[i] = scanner.nextInt();
             scanner.nextLine();
             System.out.print("Description: ");
-            description[counter - 1] = scanner.nextLine();
+            description[i] = scanner.nextLine();
             System.out.print("Amount: ");
-            amount[counter - 1] = scanner.nextDouble();
+            amount[i] = scanner.nextDouble();
             counter++;
         }
 
